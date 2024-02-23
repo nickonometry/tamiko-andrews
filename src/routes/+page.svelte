@@ -99,7 +99,7 @@
 		.mobile-image {
 			display: block;
 			width: 100%;
-			background-image: url(tamiko1.jpeg);
+			background-image: url(/tamiko1.jpeg);
 			background-size: cover;
 			background-position-y: 33%;
 		}
