@@ -1,9 +1,10 @@
 <script>
 	export let buttonText;
 	export let link;
+	export let linkTarget;
 </script>
 
-<a href={link} class="btn" target="_blank">
+<a href={link} class="btn" target={linkTarget}>
 	<svg width="277" height="62">
 		<defs>
 			<linearGradient id="grad1">
@@ -30,9 +31,7 @@
 		background-color: transparent;
 		cursor: pointer;
 		text-decoration: none;
-		font-family: 'Roboto', sans-serif;
-		font-weight: 900;
-		font-size: 17px;
+		font-size: 18px;
 		letter-spacing: 0.045em;
 		color: #847d75;
 	}

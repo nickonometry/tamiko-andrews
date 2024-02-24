@@ -1,35 +1,54 @@
 <script>
-	import Button from '../lib/button.svelte';
+	import AnchorButton from '../lib/anchor-button.svelte';
 </script>
 
-<div class="mobile-image"></div>
-<div class="grid-container">
-	<div class="bg-box">
-		<div class="image">
-			<img src="tamiko1.jpeg" alt="Tamiko photoshoot" />
+<main>
+	<div class="mobile-image"></div>
+	<div class="grid-container">
+		<div class="bg-box">
+			<div class="image">
+				<img src="tamiko1.jpeg" alt="Tamiko photoshoot" />
+			</div>
+		</div>
+		<div class="about">
+			<h1>Hi! I'm Tamiko Andrews</h1>
+			<p>
+				Meet Tamiko Andrews, an accomplished hairstylist with eight years of expertise, focusing on precision haircuts and elegant up styles. She currently thrives at House of J Henry in Portland,
+				Maine, where her talent and passion for hairstyling shine through every client she touches.
+			</p>
+			<p>
+				Originally from Lewiston, Maine, Tamiko now resides in the picturesque coastal town of Old Orchard Beach with her husband, Nick, and their loyal companion, Harley, their beloved dog. When
+				she's not creating stunning looks at the salon, you'll likely find Tamiko spending leisurely mornings with brides, making them feel radiant on their special day.
+			</p>
+			<p>
+				Beyond her artistic pursuits, Tamiko embraces the outdoors with enthusiasm, whether she's carving through snow-covered slopes while skiing, soaking up the sun on the beach, or gliding
+				peacefully across the water on her paddleboard. With her dedication to her craft and zest for life, Tamiko Andrews embodies the true essence of beauty and adventure.
+			</p>
+			<div class="button-container">
+				<AnchorButton buttonText="View my work" link="http://www.instagram.com/tandrews_style" linkTarget="_blank" />
+				<AnchorButton buttonText="Contact me" link="/contact" linkTarget="" />
+			</div>
 		</div>
 	</div>
-	<div class="about">
-		<h1>Hi! I'm Tamiko Andrews</h1>
-		<p>
-			Meet Tamiko Andrews, an accomplished hairstylist with eight years of expertise, focusing on precision haircuts and elegant up styles. She currently thrives at House of J Henry in Portland,
-			Maine, where her talent and passion for hairstyling shine through every client she touches.
-		</p>
-		<p>
-			Originally from Lewiston, Maine, Tamiko now resides in the picturesque coastal town of Old Orchard Beach with her husband, Nick, and their loyal companion, Harley, their beloved dog. When she's
-			not creating stunning looks at the salon, you'll likely find Tamiko spending leisurely mornings with brides, making them feel radiant on their special day.
-		</p>
-		<p>
-			Beyond her artistic pursuits, Tamiko embraces the outdoors with enthusiasm, whether she's carving through snow-covered slopes while skiing, soaking up the sun on the beach, or gliding peacefully
-			across the water on her paddleboard. With her dedication to her craft and zest for life, Tamiko Andrews embodies the true essence of beauty and adventure.
-		</p>
-		<div class="button-container">
-			<Button buttonText="View my work" link="http://www.instagram.com/tandrews_style" />
-		</div>
-	</div>
-</div>
+</main>
 
 <style>
+	main {
+		height: 100dvh;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		grid-template-rows: 1fr;
+		place-content: center;
+	}
+
+	@media screen and (max-width: 960px) {
+		main {
+			display: grid;
+			grid-template-rows: 300px 1fr;
+			place-content: start;
+		}
+	}
 	h1 {
 		font-size: 56px;
 		padding: 0;
