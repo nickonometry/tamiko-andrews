@@ -13,12 +13,12 @@
 		<div class="about">
 			<h1>Hi! I'm Tamiko Andrews</h1>
 			<p>
-				Meet Tamiko Andrews, an accomplished hairstylist with eight years of expertise, focusing on precision haircuts and elegant up styles. She currently thrives at House of J Henry in Portland,
-				Maine, where her talent and passion for hairstyling shine through every client she touches.
+				Meet Tamiko, an accomplished hairstylist with eight years of expertise, focusing on precision haircuts and elegant up styles. She currently thrives at House of J Henry in Portland, Maine,
+				where her talent and passion for hairstyling shine through every client she touches.
 			</p>
 			<p>
-				Originally from Lewiston, Maine, Tamiko now resides in the picturesque coastal town of Old Orchard Beach with her husband, Nick, and their loyal companion, Harley, their beloved dog. When
-				she's not creating stunning looks at the salon, you'll likely find Tamiko spending leisurely mornings with brides, making them feel radiant on their special day.
+				Originally from Lewiston, Maine, Tamiko now resides in the picturesque coastal town of Old Orchard Beach with her husband, Nick, and their loyal companion, Harley, a mini Australian shepherd.
+				When she's not creating stunning looks at the salon, you'll likely find Tamiko spending leisurely mornings with brides, making them feel radiant on their special day.
 			</p>
 			<p>
 				Beyond her artistic pursuits, Tamiko embraces the outdoors with enthusiasm, whether she's carving through snow-covered slopes while skiing, soaking up the sun on the beach, or gliding
