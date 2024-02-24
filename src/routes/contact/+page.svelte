@@ -47,6 +47,7 @@
 	.input-container {
 		display: grid;
 		gap: 4px;
+		width: 100%;
 	}
 
 	label {
@@ -56,6 +57,7 @@
 	input {
 		height: 56px;
 		padding-inline: 16px;
+		width: 100%;
 	}
 
 	textarea {
