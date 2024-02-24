@@ -105,6 +105,8 @@
 	.button-container {
 		width: 100%;
 		display: flex;
+		flex-wrap: wrap;
+		gap: 24px;
 		align-items: center;
 		justify-content: center;
 	}
@@ -136,6 +138,9 @@
 		}
 		.image {
 			display: none;
+		}
+
+		.button-container {
 		}
 	}
 </style>

@@ -70,8 +70,16 @@
 		background-color: transparent;
 		font-size: 18px;
 		letter-spacing: 0.045em;
-		color: #847d75;
+		color: #675e54;
 		font-weight: 800;
 		font-family: 'Playfair Display', serif;
+		transition: all 400ms ease-in;
+	}
+
+	input[type='submit']:hover {
+		background-color: #d5d4d3;
+		color: #242019;
+		border-color: #322e28;
+		cursor: pointer;
 	}
 </style>
