@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AnchorButton from '../components/AnchorButton.astro';
+import tamiko from '../../src/assets/images/tamiko.jpeg';
+import { Image } from 'astro:assets';
+---
+
+<Layout title="Tamiko Andrews - An Accomplished Southern Maine Hair Stylist">
+ <main>
+  <div class="grid">
+   <div class="headshot-grid">
+    <div class="box"></div>
+    <Image
+     src={tamiko}
+     alt="Tamiko Andrews headshot"
+     densities={[1.5, 2]}
+     quality="mid"
+     class="headshot"
+    />
+   </div>
+   <div class="bio">
+    <div class="block-stack">
+     <h1>Tamiko Andrews</h1>
+     <p>
+      Tamiko is an accomplished hairstylist with eight years of expertise, focusing on precision haircuts and elegant up styles. She currently thrives
+      at House of J Henry in Portland, Maine, where her talent and passion for hairstyling shine through every client she touches.
+     </p>
+
+     <p>
+      Originally from Lewiston, Maine, Tamiko now resides in the picturesque coastal town of Old Orchard Beach with her husband, Nick, and their loyal
+      companion, Harley, a mini Australian shepherd. When she's not creating stunning looks at the salon, you'll likely find Tamiko spending leisurely
+      mornings with brides, making them feel radiant on their special day.
+     </p>
+
+     <p>
+      Beyond her artistic pursuits, Tamiko embraces the outdoors with enthusiasm, whether she's carving through snow-covered slopes while skiing,
+      soaking up the sun on the beach, or gliding peacefully across the water on her paddleboard. With her dedication to her craft and zest for life,
+      Tamiko Andrews embodies the true essence of beauty and adventure.
+     </p>
+     <div
+      class="inline-stack"
+      style="justify-content: center;">
+      <AnchorButton
+       buttonText="View my work"
+       link="www.google.com"
+       linkTarget="_blank"
+      />
+      <AnchorButton
+       buttonText="Contact me"
+       link="/contact"
+       linkTarget=""
+      />
+     </div>
+    </div>
+   </div>
+  </div>
+ </main>
+</Layout>
+
+<style>
+ main {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-content: center;
+  font-size: 20px;
+  line-height: 1.6;
+  padding: 24px;
+ }
+
+ .grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  width: 100%;
+ }
+
+ .headshot-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+ }
+
+ .box {
+  position: relative;
+  overflow: visible;
+  background: #e8e3df;
+  background: var(--accent-gradient-dark);
+  z-index: 1;
+  grid-column: 1/12;
+  grid-row: 2/13;
+  z-index: -1;
+ }
+
+ .headshot {
+  object-fit: cover;
+  grid-column: 3/13;
+  grid-row: 1/12;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+ }
+
+ @media screen and (max-width: 1024px) {
+  main {
+   padding: 0;
+   place-content: start;
+  }
+
+  .grid {
+   grid-template-columns: 1fr;
+   grid-template-rows: 300px auto;
+   gap: 0;
+   width: 100%;
+  }
+
+  h1 {
+   text-align: center;
+  }
+
+  .headshot-grid {
+   display: block;
+  }
+
+  .headshot-grid .box {
+   display: none;
+  }
+
+  .headshot-grid .headshot {
+   display: block;
+   max-width: 100%;
+   height: 300px;
+   object-position: 50% 35%;
+  }
+
+  .bio {
+   padding: 24px;
+  }
+
+  .inline-stack {
+   justify-content: center;
+   flex-wrap: wrap;
+  }
+ }
+</style>
