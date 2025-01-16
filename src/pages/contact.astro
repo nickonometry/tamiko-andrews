@@ -1,133 +1,138 @@
 ---
 // @ts-nocheck
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Tamiko Andrews - An Accomplished Southern Maine Hair Stylist - Contact Me">
- <main>
-  <div class="contact-container">
-   <form
-    name="netlify-form-example"
-    method="POST"
-    netlify-honeypot="bot-field"
-    data-netlify="true"
-    netlify>
-    <p style="margin: 0;">
-     I'd love to work at your wedding! Please fill out the form below and we can discuss the details further. Hope to hear from you soon.
-    </p>
-    <input
-     type="hidden"
-     name="form-name"
-     value="netlify-form-example"
-    />
-    <div class="input-container">
-     <label for="name">Name</label>
-     <input
-      name="name"
-      id="name"
-      required
-      type="text"
-     />
+<Layout
+  title="Tamiko Andrews - An Accomplished Southern Maine Hair Stylist - Contact Me">
+  <main>
+    <div class="contact-container">
+      <form
+        name="netlify-form-example"
+        method="POST"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+        netlify>
+        <a href="/" class="back">
+          <svg
+            height="32px"
+            width="32px"
+            id="Layer_1"
+            style="enable-background:new 0 0 512 512;"
+            version="1.1"
+            viewBox="0 0 512 512"
+            width="512px"
+            xml:space="preserve"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            ><polygon
+              points="352,128.4 319.7,96 160,256 160,256 160,256 319.7,416 352,383.6 224.7,256 "
+            ></polygon></svg
+          >
+          Back to the homepage
+        </a>
+        <p style="margin: 0;">
+          I'd love to work at your event! Please fill out the form below and we
+          can discuss the details further. Hope to hear from you soon.
+        </p>
+        <input type="hidden" name="form-name" value="netlify-form-example" />
+        <div class="input-container">
+          <label for="name">Name</label>
+          <input name="name" id="name" required type="text" />
+        </div>
+        <div class="input-container">
+          <label for="email">Email</label>
+          <input name="email" id="email" required type="email" />
+        </div>
+        <div class="input-container">
+          <label for="phone">Phone number</label>
+          <input name="phone" id="phone" required type="phone" />
+        </div>
+        <div class="input-container">
+          <label for="event-date">Event Date</label>
+          <input name="event-date" id="event-date" required type="date" />
+        </div>
+        <div class="input-container">
+          <label for="project">Project Details</label>
+          <textarea name="project" id="project" type="text"> </textarea>
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
     </div>
-    <div class="input-container">
-     <label for="email">Email</label>
-     <input
-      name="email"
-      id="email"
-      required
-      type="email"
-     />
-    </div>
-    <div class="input-container">
-     <label for="phone">Phone number</label>
-     <input
-      name="phone"
-      id="phone"
-      required
-      type="phone"
-     />
-    </div>
-    <div class="input-container">
-     <label for="wedding-date">Wedding Date</label>
-     <input
-      name="wedding-date"
-      id="wedding-date"
-      required
-      type="date"
-     />
-    </div>
-    <div class="input-container">
-     <label for="project">Project Details</label>
-     <textarea
-      name="project"
-      id="project"
-      type="text">
-     </textarea>
-    </div>
-    <input
-     type="submit"
-     value="Submit"
-    />
-   </form>
-  </div>
- </main>
+  </main>
 </Layout>
 
 <style>
- .contact-container {
-  max-width: 1440px;
-  width: 100%;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  padding: 24px;
- }
+  main {
+    height: 100dvh;
+    display: flex;
+    place-content: center;
+  }
 
- form {
-  display: grid;
-  gap: 24px;
-  max-width: 768px;
-  width: 100%;
-  margin: 0 auto;
- }
+  .back {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    color: var(--accent-darker);
+    text-decoration: underline;
+    text-decoration-color: var(--accent-dark);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 4px;
+  }
+  .contact-container {
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px;
+  }
 
- .input-container {
-  display: grid;
-  gap: 4px;
-  width: 100%;
- }
+  form {
+    display: grid;
+    gap: 24px;
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+  }
 
- label {
-  font-size: 0.95rem;
- }
+  .input-container {
+    display: grid;
+    gap: 4px;
+    width: 100%;
+  }
 
- input {
-  height: 56px;
-  padding-inline: 16px;
-  width: 100%;
- }
+  label {
+    font-size: 0.95rem;
+  }
 
- textarea {
-  height: 100px;
- }
+  input {
+    height: 56px;
+    padding-inline: 16px;
+    width: 100%;
+  }
 
- input[type='submit'] {
-  display: grid;
-  place-content: center;
-  border: 4px solid var(--accent-dark);
-  border-radius: 64px;
-  background-color: transparent;
-  font-size: 18px;
-  letter-spacing: 0.045em;
-  color: var(--accent-darker);
-  font-weight: 800;
-  transition: all 400ms ease-in;
- }
+  textarea {
+    height: 100px;
+  }
 
- input[type='submit']:hover {
-  background-color: #d5d4d3;
-  color: #242019;
-  border-color: var(--accent-darker);
-  cursor: pointer;
- }
+  input[type="submit"] {
+    display: grid;
+    place-content: center;
+    border: 4px solid var(--accent-dark);
+    border-radius: 64px;
+    background-color: transparent;
+    font-size: 18px;
+    letter-spacing: 0.045em;
+    color: var(--accent-darker);
+    font-weight: 800;
+    transition: all 400ms ease-in;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #d5d4d3;
+    color: #242019;
+    border-color: var(--accent-darker);
+    cursor: pointer;
+  }
 </style>
