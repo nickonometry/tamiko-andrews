@@ -1,8 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import AnchorButton from "../components/AnchorButton.astro";
 import tamiko from "../../src/assets/images/tamiko.jpeg";
 import { Image } from "astro:assets";
+
+// Calculate years of experience from start date (2016)
+const startYear = 2016;
+const currentYear = new Date().getFullYear();
+const yearsExperience = currentYear - startYear;
 ---
 
 <Layout title="Tamiko Andrews - An Accomplished Southern Maine Hair Stylist">
@@ -23,7 +27,7 @@ import { Image } from "astro:assets";
             <span class="line"></span>
           </div>
           <p class="tagline">
-            Precision cuts & elegant styles for your most beautiful moments
+            Wearable cuts & elegant styles for your most beautiful moments
           </p>
         </div>
       </div>
@@ -49,8 +53,8 @@ import { Image } from "astro:assets";
       <div class="content">
         <div class="content-inner">
           <p>
-            Tamiko is an accomplished hairstylist with eight years of expertise,
-            focusing on precision haircuts and elegant up styles. She currently
+            Tamiko is an accomplished hairstylist with {yearsExperience} years of expertise,
+            focusing on wearable cuts and elegant up styles. She currently
             thrives at <em>House of J Henry</em> in Portland, Maine, where her talent and
             passion for hairstyling shine through every client she touches—especially
             brides, whom she loves making feel radiant on their special day.
@@ -63,18 +67,6 @@ import { Image } from "astro:assets";
             enthusiasm—skiing snow-covered slopes, soaking up the sun on the beach,
             and gliding peacefully across the water on her paddleboard.
           </p>
-          <div class="cta-group">
-            <AnchorButton
-              buttonText="View my work"
-              link="https://www.instagram.com/tandrews_style"
-              linkTarget="_blank"
-            />
-            <AnchorButton
-              buttonText="Contact me"
-              link="/contact"
-              linkTarget=""
-            />
-          </div>
         </div>
       </div>
     </div>
@@ -342,13 +334,6 @@ import { Image } from "astro:assets";
     font-weight: 500;
   }
 
-  .cta-group {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 2rem;
-  }
-
   /* Bottom flourish */
   .bottom-flourish {
     position: absolute;
@@ -489,13 +474,6 @@ import { Image } from "astro:assets";
       font-size: 1rem;
       line-height: 1.7;
       margin-bottom: 1rem;
-    }
-
-    .cta-group {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 1.5rem;
     }
 
     .bottom-flourish {

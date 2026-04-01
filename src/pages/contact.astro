@@ -27,20 +27,6 @@ import { Image } from "astro:assets";
           netlify-honeypot="bot-field"
           data-netlify="true"
           netlify>
-          <a href="/" class="back">
-            <svg
-              height="24px"
-              width="24px"
-              viewBox="0 0 512 512"
-              xmlns="http://www.w3.org/2000/svg"
-              ><polygon
-                points="352,128.4 319.7,96 160,256 160,256 160,256 319.7,416 352,383.6 224.7,256 "
-                fill="currentColor"
-              ></polygon></svg
-            >
-            Back
-          </a>
-
           <div class="form-header">
             <span class="script-title">Let's Connect</span>
             <div class="flourish">
@@ -149,34 +135,10 @@ import { Image } from "astro:assets";
     align-items: center;
     justify-content: center;
     padding: 24px;
+    padding-top: 80px;
     background: var(--accent-gradient);
     animation: fadeInUp 0.8s ease-out;
     overflow: hidden;
-  }
-
-  .back {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: #4a3f36;
-    text-decoration: none;
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-    margin-bottom: 0.5rem;
-  }
-
-  .back:hover {
-    color: var(--accent-darker);
-  }
-
-  .back svg {
-    transition: transform 0.3s ease;
-  }
-
-  .back:hover svg {
-    transform: translateX(-4px);
   }
 
   .form-header {
@@ -240,11 +202,11 @@ import { Image } from "astro:assets";
     animation: fadeInUp 0.6s ease-out both;
   }
 
-  .input-container:nth-child(4) { animation-delay: 0.25s; }
-  .input-container:nth-child(5) { animation-delay: 0.3s; }
-  .input-container:nth-child(6) { animation-delay: 0.35s; }
-  .input-container:nth-child(7) { animation-delay: 0.4s; }
-  .input-container:nth-child(8) { animation-delay: 0.45s; }
+  .input-container:nth-child(3) { animation-delay: 0.25s; }
+  .input-container:nth-child(4) { animation-delay: 0.3s; }
+  .input-container:nth-child(5) { animation-delay: 0.35s; }
+  .input-container:nth-child(6) { animation-delay: 0.4s; }
+  .input-container:nth-child(7) { animation-delay: 0.45s; }
 
   label {
     font-size: 0.75rem;

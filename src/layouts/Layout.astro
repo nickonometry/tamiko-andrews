@@ -56,6 +56,16 @@ const { title } = Astro.props;
   <title>{title}</title>
  </head>
  <body>
+  <nav class="main-nav">
+    <a href="/" class="nav-logo">TA</a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <span class="nav-divider"></span>
+      <a href="https://www.instagram.com/tandrews_style" target="_blank" class="nav-link">Portfolio</a>
+      <span class="nav-divider"></span>
+      <a href="/contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
   <slot />
  </body>
 </html>
@@ -100,5 +110,107 @@ const { title } = Astro.props;
  .block-stack {
   display: grid;
   gap: 24px;
+ }
+
+ /* Navigation */
+ .main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(to bottom, rgba(250, 249, 247, 0.95), rgba(250, 249, 247, 0));
+  animation: fadeInNav 1s ease-out;
+ }
+
+ @keyframes fadeInNav {
+  from {
+   opacity: 0;
+   transform: translateY(-20px);
+  }
+  to {
+   opacity: 1;
+   transform: translateY(0);
+  }
+ }
+
+ .nav-logo {
+  font-family: 'Allura', cursive;
+  font-size: 2rem;
+  color: #4a3f36;
+  text-decoration: none;
+  transition: color 0.3s ease;
+ }
+
+ .nav-logo:hover {
+  color: var(--accent-darker);
+ }
+
+ .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+ }
+
+ .nav-link {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #4a3f36;
+  text-decoration: none;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.3s ease;
+ }
+
+ .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #4a3f36;
+  transition: width 0.3s ease;
+ }
+
+ .nav-link:hover {
+  color: var(--accent-darker);
+ }
+
+ .nav-link:hover::after {
+  width: 100%;
+ }
+
+ .nav-divider {
+  width: 4px;
+  height: 4px;
+  background: var(--accent-dark);
+  transform: rotate(45deg);
+  opacity: 0.5;
+ }
+
+ @media screen and (max-width: 600px) {
+  .main-nav {
+   padding: 16px 20px;
+  }
+
+  .nav-links {
+   gap: 16px;
+  }
+
+  .nav-link {
+   font-size: 0.7rem;
+   letter-spacing: 0.15em;
+  }
+
+  .nav-divider {
+   width: 3px;
+   height: 3px;
+  }
  }
 </style>
