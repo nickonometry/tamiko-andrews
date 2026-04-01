@@ -7,47 +7,63 @@ import { Image } from "astro:assets";
 
 <Layout title="Tamiko Andrews - An Accomplished Southern Maine Hair Stylist">
   <main>
-    <div class="grid">
-      <div class="headshot-grid">
-        <div class="box"></div>
-        <Image
-          src={tamiko}
-          alt="Tamiko Andrews headshot"
-          densities={[1.5, 2]}
-          quality="mid"
-          width="450"
-          loading="lazy"
-          class="headshot"
-        />
+    <!-- Decorative background elements -->
+    <div class="bg-accent"></div>
+    <div class="bg-circle"></div>
+
+    <div class="hero">
+      <!-- Left side: Name and intro -->
+      <div class="intro">
+        <div class="intro-inner">
+          <span class="eyebrow">Portland, Maine</span>
+          <h1 class="script-name">Tamiko Andrews</h1>
+          <div class="title-line">
+            <span class="line"></span>
+            <span class="title">Hair Stylist</span>
+            <span class="line"></span>
+          </div>
+          <p class="tagline">
+            Precision cuts & elegant styles for your most beautiful moments
+          </p>
+        </div>
       </div>
-      <div class="bio">
-        <div class="block-stack">
-          <h1>Tamiko Andrews</h1>
+
+      <!-- Center: Image with frame -->
+      <div class="image-container">
+        <div class="image-frame">
+          <div class="frame-accent"></div>
+          <Image
+            src={tamiko}
+            alt="Tamiko Andrews headshot"
+            densities={[1.5, 2]}
+            quality="mid"
+            width="420"
+            loading="eager"
+            class="headshot"
+          />
+          <div class="frame-border"></div>
+        </div>
+      </div>
+
+      <!-- Right side: Bio and CTA -->
+      <div class="content">
+        <div class="content-inner">
           <p>
             Tamiko is an accomplished hairstylist with eight years of expertise,
             focusing on precision haircuts and elegant up styles. She currently
-            thrives at House of J Henry in Portland, Maine, where her talent and
-            passion for hairstyling shine through every client she touches.
+            thrives at <em>House of J Henry</em> in Portland, Maine, where her talent and
+            passion for hairstyling shine through every client she touches—especially
+            brides, whom she loves making feel radiant on their special day.
           </p>
-
           <p>
             Originally from Lewiston, Maine, Tamiko now resides in the
             picturesque coastal town of Old Orchard Beach with her husband,
             Nick, and their loyal companion, Harley, a mini Australian shepherd.
-            When she's not creating stunning looks at the salon, you'll likely
-            find Tamiko spending leisurely mornings with brides, making them
-            feel radiant on their special day.
+            Beyond her artistic pursuits, she embraces the outdoors with
+            enthusiasm—skiing snow-covered slopes, soaking up the sun on the beach,
+            and gliding peacefully across the water on her paddleboard.
           </p>
-
-          <p>
-            Beyond her artistic pursuits, Tamiko embraces the outdoors with
-            enthusiasm, whether she's carving through snow-covered slopes while
-            skiing, soaking up the sun on the beach, or gliding peacefully
-            across the water on her paddleboard. With her dedication to her
-            craft and zest for life, Tamiko Andrews embodies the true essence of
-            beauty and adventure.
-          </p>
-          <div class="inline-stack" style="justify-content: center;">
+          <div class="cta-group">
             <AnchorButton
               buttonText="View my work"
               link="https://www.instagram.com/tandrews_style"
@@ -62,92 +78,430 @@ import { Image } from "astro:assets";
         </div>
       </div>
     </div>
+
+    <!-- Bottom decorative element -->
+    <div class="bottom-flourish">
+      <span class="diamond"></span>
+    </div>
   </main>
 </Layout>
 
 <style>
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes expandWidth {
+    from { width: 0; }
+    to { width: 50px; }
+  }
+
+  @keyframes scaleIn {
+    from { transform: scale(0) rotate(45deg); }
+    to { transform: scale(1) rotate(45deg); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes shimmer {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.3; }
+  }
+
   main {
-    display: grid;
-    height: 100%;
+    min-height: 100dvh;
     width: 100%;
-    place-content: center;
-    font-size: 20px;
-    line-height: 1.6;
-    padding: 24px;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 24px;
-    width: 100%;
-  }
-
-  .headshot-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-  }
-
-  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
     position: relative;
-    overflow: visible;
-    background: #e8e3df;
-    background: var(--accent-gradient-dark);
+    overflow: hidden;
+  }
+
+  /* Background decorative elements */
+  .bg-accent {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 50%;
+    height: 140%;
+    background: linear-gradient(135deg, var(--accent-light) 0%, transparent 70%);
+    transform: skewX(-12deg);
+    z-index: 0;
+    animation: fadeIn 1.5s ease-out;
+  }
+
+  .bg-circle {
+    position: absolute;
+    bottom: -30%;
+    left: -15%;
+    width: 500px;
+    height: 500px;
+    border: 1px solid var(--accent-dark);
+    border-radius: 50%;
+    opacity: 0.15;
+    z-index: 0;
+    animation: fadeIn 2s ease-out 0.5s both;
+  }
+
+  /* Main hero layout */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1400px;
+    width: 100%;
+    position: relative;
     z-index: 1;
-    grid-column: 1/12;
-    grid-row: 2/13;
+  }
+
+  /* Left intro section */
+  .intro {
+    display: flex;
+    justify-content: flex-end;
+    animation: fadeInLeft 1s ease-out;
+  }
+
+  .intro-inner {
+    text-align: right;
+    max-width: 320px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: #4a3f36;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .eyebrow::before {
+    content: '';
+    position: absolute;
+    left: -60px;
+    top: 50%;
+    width: 40px;
+    height: 1px;
+    background: #4a3f36;
+  }
+
+  .script-name {
+    font-family: 'Allura', cursive;
+    font-size: 4.5rem;
+    color: var(--accent-darker);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .title-line {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+  .title-line .line {
+    height: 1px;
+    width: 50px;
+    background: linear-gradient(to right, transparent, var(--accent-dark));
+    animation: expandWidth 1s ease-out 0.5s both;
+  }
+
+  .title-line .line:last-child {
+    display: none;
+  }
+
+  .title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #4a3f36;
+    font-weight: 400;
+  }
+
+  .tagline {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--accent-darker);
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+
+  /* Center image section */
+  .image-container {
+    position: relative;
+    animation: fadeInUp 1s ease-out 0.2s both;
+  }
+
+  .image-frame {
+    position: relative;
+    padding: 12px;
+  }
+
+  .frame-accent {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: 40px;
+    bottom: 40px;
+    background: var(--accent-gradient-dark);
     z-index: -1;
+    animation: fadeIn 1s ease-out 0.4s both;
+  }
+
+  .frame-border {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: -10px;
+    bottom: -10px;
+    border: 1px solid var(--accent-dark);
+    z-index: -1;
+    animation: fadeIn 1s ease-out 0.6s both;
   }
 
   .headshot {
+    display: block;
+    width: 380px;
+    height: 520px;
     object-fit: cover;
-    grid-column: 3/13;
-    grid-row: 1/12;
-    max-width: 500px;
-    width: 100%;
-    height: auto;
+    object-position: center 20%;
+    transition: transform 0.6s ease, filter 0.6s ease;
   }
 
-  @media screen and (max-width: 1024px) {
+  .image-frame:hover .headshot {
+    transform: scale(1.02);
+  }
+
+  /* Right content section */
+  .content {
+    display: flex;
+    justify-content: flex-start;
+    animation: fadeInRight 1s ease-out 0.3s both;
+  }
+
+  .content-inner {
+    max-width: 380px;
+  }
+
+  .content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--accent-darker);
+    margin-bottom: 1.5rem;
+  }
+
+  .content p em {
+    font-style: italic;
+    color: #4a3f36;
+    font-weight: 500;
+  }
+
+  .cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 2rem;
+  }
+
+  /* Bottom flourish */
+  .bottom-flourish {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeIn 1s ease-out 1s both;
+  }
+
+  .bottom-flourish .diamond {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-dark);
+    transform: rotate(45deg);
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Tablet */
+  @media screen and (max-width: 1200px) {
+    .hero {
+      gap: 40px;
+    }
+
+    .script-name {
+      font-size: 3.5rem;
+    }
+
+    .headshot {
+      width: 320px;
+      height: 440px;
+    }
+
+    .content p {
+      font-size: 1rem;
+    }
+  }
+
+  /* Mobile */
+  @media screen and (max-width: 900px) {
     main {
       padding: 0;
-      place-content: start;
+      min-height: auto;
     }
 
-    .grid {
-      grid-template-columns: 1fr;
-      grid-template-rows: 300px auto;
-      gap: 0;
-      width: 100%;
+    .bg-accent {
+      top: 0;
+      right: -30%;
+      width: 80%;
+      height: 60%;
+      transform: skewX(-8deg);
     }
 
-    h1 {
-      text-align: center;
-    }
-
-    .headshot-grid {
-      display: block;
-    }
-
-    .headshot-grid .box {
+    .bg-circle {
       display: none;
     }
 
-    .headshot-grid .headshot {
-      display: block;
-      max-width: 100%;
-      height: 300px;
-      object-position: 50% 35%;
+    .hero {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+      gap: 0;
     }
 
-    .bio {
-      padding: 24px;
-    }
-
-    .inline-stack {
+    .intro {
+      order: 2;
       justify-content: center;
+      padding: 32px 24px 0;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .intro-inner {
+      text-align: center;
+      max-width: 100%;
+    }
+
+    .eyebrow::before {
+      display: none;
+    }
+
+    .script-name {
+      font-size: 3rem;
+    }
+
+    .title-line {
+      justify-content: center;
+    }
+
+    .title-line .line:first-child {
+      background: linear-gradient(to left, transparent, var(--accent-dark));
+    }
+
+    .title-line .line:last-child {
+      display: block;
+      background: linear-gradient(to right, transparent, var(--accent-dark));
+    }
+
+    .tagline {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .image-container {
+      order: 1;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    .image-frame {
+      padding: 0;
+    }
+
+    .frame-accent,
+    .frame-border {
+      display: none;
+    }
+
+    .headshot {
+      width: 100%;
+      height: 350px;
+      object-position: center 25%;
+    }
+
+    .image-frame:hover .headshot {
+      transform: none;
+    }
+
+    .content {
+      order: 3;
+      justify-content: center;
+      padding: 24px;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+
+    .content-inner {
+      max-width: 100%;
+    }
+
+    .content p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .cta-group {
+      flex-direction: row;
       flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .bottom-flourish {
+      position: relative;
+      bottom: auto;
+      padding: 24px 0 32px;
     }
   }
 </style>
